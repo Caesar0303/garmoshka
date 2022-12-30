@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="main.css" rel="stylesheet" type="text/css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="questions">
+        <a href="#" style="color:#000;" onclick="toggle()">Метод querySelector</a>
+        <p class="answer hidden">&nbsp&nbsp >Метод querySelector позволяет получить элемент страницы по произвольному селектору CSS. С полученным элементом можно будет производить различные манипуляции: менять его текст, атрибуты, CSS стили и так далее.
+        </p>
+    </div>
+    <div class="questions" >
+        <a href="#" style="color:#000;" onclick="toggle()">Метод getElementById</a>
+        <p class="answer hidden">&nbsp&nbsp >Метод getElementById позволяет получить элемент страницы по его атрибуту id. С полученным элементом можно будет производить различные манипуляции: менять его текст, атрибуты, CSS стили и так далее.</p>
+    </div>
+    <div class="questions" >
+        <a href="#" style="color:#000;" onclick="toggle()">Метод getElementsByClassName</a>
+        <p class="answer hidden">&nbsp&nbsp >Метод getElementsByClassName позволяет получить элементы страницы по их классу, заданному в атрибуте class. С полученными элементами можно будет производить различные манипуляции: менять их текст, атрибуты, CSS стили и так далее.</p>
+    </div>
+    <div class="questions" >
+        <a href="#" style="color:#000;" onclick="toggle()">Метод getElementsByClassName</a>
+        <p class="answer hidden">&nbsp&nbsp >Метод getElementsByClassName позволяет получить элементы страницы по их классу, заданному в атрибуте class. С полученными элементами можно будет производить различные манипуляции: менять их текст, атрибуты, CSS стили и так далее.</p>
+    </div>
+    <script>
+
+        var questions = document.getElementsByClassName('questions'); 
+
+        function toggle (){
+            for(var y = 0; y < questions.length; y++) {
+                questions[y].lastElementChild.classList.add('hidden')
+            }
+        }
+
+        // for (var i = 0; i < questions.length; i++) {
+        //     questions[i].onclick = function (){ 
+        //         this.lastElementChild.classList.remove('hidden');
+        //     }  
+        // }      
+        
+        for (var z = 0; z < questions.length; z++) {
+            questions[z].onclick = function (){
+                console.log(questions)
+                console.log(this.lastElementChild)
+                if (this.lastElementChild.classList.contains('hidden') === true){
+                    this.lastElementChild.classList.remove('hidden');
+                }
+                else{
+                    this.lastElementChild.classList.add('hidden');
+                }
+            }
+        }     
+        
+
+    </script>
+</body>
+</html>

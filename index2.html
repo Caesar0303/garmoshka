@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="main.css" rel="stylesheet" type="text/css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="question" data-id="1">Метод querySelector</div>
+    <div id="answer1 hidden">&nbsp&nbsp >Метод querySelector позволяет получить элемент страницы по произвольному селектору CSS. С полученным элементом можно будет производить различные манипуляции: менять его текст, атрибуты, CSS стили и так далее.</div>
+    <div class="question" data-id="1">Метод querySelector</div>
+    <div id="answer1 hidden">&nbsp&nbsp >Метод querySelector позволяет получить элемент страницы по произвольному селектору CSS. С полученным элементом можно будет производить различные манипуляции: менять его текст, атрибуты, CSS стили и так далее.</div>
+    <div class="question" data-id="1">Метод querySelector</div>
+    <div id="answer1 hidden">&nbsp&nbsp >Метод querySelector позволяет получить элемент страницы по произвольному селектору CSS. С полученным элементом можно будет производить различные манипуляции: менять его текст, атрибуты, CSS стили и так далее.</div>
+    <div class="question" data-id="1">Метод querySelector</div>
+    <div id="answer1 hidden">&nbsp&nbsp >Метод querySelector позволяет получить элемент страницы по произвольному селектору CSS. С полученным элементом можно будет производить различные манипуляции: менять его текст, атрибуты, CSS стили и так далее.</div>
+</body>
+<script>
+    // 1. 
+    let qs = document.getElementsByClassName('question')
+    // 2.
+    let answerID = "answer" + id;
+    let answerElement  = document.getElementById(answerID);
+    function toggle (id) {
+        if (answerElement.classList.contains('hidden')){
+            answerElement.classList.remove('hidden');
+        }
+        else {
+            answerElement.classList.add('hidden');
+        }
+    }
+
+    for(let questionElement of qs) {
+        let id = questionElement.dataset.id;
+        questionElement.onclick = toggle(id);
+    }
+
+
+    // 1. Перемещаем questions в переменную
+    // 2. Создаем функцию, в функций: 1. Достаем ответы, проверяем хранятся ли там класс hidden. 2. Если есть удаляем hidden. 3. Если нету добавляем
+    // 3. По циклу вешаем onclick с функций на элементы
+</script>
+</html>
